@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  yocto:
+    image: yocto/builder:v0.1
+    stdin_open: true
+    tty: true
+    container_name: yocto-builder
+    network_mode: host
+    pid: host
+    restart: "no"
+    volumes:
+      - ${YOCTO_HOME}:/home/yocto/workspace/:rw
+    command: /bin/bash
